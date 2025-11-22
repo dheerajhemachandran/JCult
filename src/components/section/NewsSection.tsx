@@ -1,0 +1,67 @@
+import { ArrowRight } from "lucide-react";
+
+interface NewsItem {
+  category: string;
+  title: string;
+  href: string;
+  date?: string;
+  source?: string;
+}
+
+interface NewsSectionProps {
+  title: string;
+  description: string;
+  items: NewsItem[];
+}
+
+export default function NewsSection({ title, description, items }: NewsSectionProps) {
+  return (
+    <section className="py-6 md:py-8 lg:py-16">
+      <div className="container-responsive">
+        <div className="flex flex-col md:flex-row items-start">
+          {/* Left: Title and Description */}
+          <div className="w-2/3 md:mb-0 pr-2">
+            <h2 className="text-[48px] leading-[53px] font-signifier font-bold text-primary mb-8">
+              {title}
+            </h2>
+            <p className="text-sm md:text-base text-secondary leading-relaxed">
+              {description}
+            </p>
+          </div>
+
+          {/* Right: News Items */}
+          <div className="w-full lg:pl-2">
+            <div className="divide-y border-t border-b">
+              {items.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  className="group flex justify-between py-4 md:py-6 items-start transition"
+                >
+                  <div className="space-y-1 flex-1">
+                    <p className="text-xs md:text-sm text-secondary uppercase tracking-wide">
+                      {item.category}
+                    </p>
+
+                    {(item.date || item.source) && (
+                      <p className="text-xs text-secondary/70">
+                        {item.date}
+                        {item.source && <> | {item.source}</>}
+                      </p>
+                    )}
+
+                    <h3 className="text-base md:text-lg font-bold text-primary group-hover:underline font-signifier">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <ArrowRight className="h-5 w-5 text-primary group-hover:translate-x-1 transition ml-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

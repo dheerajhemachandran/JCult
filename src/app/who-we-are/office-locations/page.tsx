@@ -21,8 +21,8 @@ export default function OfficeLocations() {
     <div className="min-h-screen bg-main">
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative overflow-visible ml-4 md:ml-8 mb-16">
-          <div className="bg-primary min-h-[60vh] flex items-start px-4 md:px-8 py-8 md:py-16">
+        <section className="relative overflow-visible mb-16">
+          <div className="bg-primary min-h-[60vh] flex items-start px-4 md:px-8 py-8 md:py-16 ml-0 md:ml-4 lg:ml-8">
             <h1 className="text-3xl md:text-5xl font-bold text-white">
               Office Locations
             </h1>

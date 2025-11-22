@@ -11,7 +11,7 @@
   
   /* Theme Colors */
   --color-main: #FFFFFF;
-  --color-primary: #1E40AF;
+  --color-primary: #08225a;
   --color-primary-light: #3B82F6;
   --color-text: #2D2D2D;
   --color-secondary: #6B7280;
@@ -19,6 +19,8 @@
   
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-tt-commons: 'TT Commons', sans-serif;
+  --font-signifier: 'Signifier', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,7 +33,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-tt-commons);
 }
 
 /* Theme Classes */
@@ -54,7 +56,7 @@ body {
 /* Responsive Container */
 .container-responsive {
   width: 100%;
-  max-width: 1024px;
+  max-width: 1204px;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -80,7 +82,7 @@ body {
 
 @media (min-width: 1024px) {
   .hero-responsive {
-    height: 90vh;
+    height: 80vh;
   }
 }
 
@@ -114,8 +116,17 @@ body {
 
 @media (min-width: 1024px) {
   .hero-content-align {
-    left: calc(50vw - 512px + 2rem);
+    left: calc(50vw - 512px + 4rem);
   }
+}
+
+/* Font Classes */
+.font-tt-commons {
+  font-family: var(--font-tt-commons);
+}
+
+.font-signifier {
+  font-family: var(--font-signifier);
 }
 
 /* Button Classes */

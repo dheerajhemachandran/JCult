@@ -1,6 +1,7 @@
 interface StatItem {
   number: string;
   description: string;
+  subtitle?: string;
 }
 
 interface StatsProps {
@@ -22,12 +23,15 @@ export default function Stats({ stats, title, className = "" }: StatsProps) {
         )}
         <div className="md:ml-32 lg:ml-48 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="stat-item border-l-2 border-secondary pl-3 md:pl-4 lg:pl-6">
-              <div className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-3 md:mb-4 lg:mb-8">
+            <div key={index} className="stat-item border-l-2 border-gray-200 pl-3 md:pl-4 lg:pl-6">
+              <div className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 md:mb-5 lg:mb-10 font-signifier">
                 {stat.number}
               </div>
-              <p className="text-secondary text-xs md:text-sm lg:text-base">
+              <p className="text-secondary text-xs md:text-sm lg:text-base mb-2 md:mb-3 lg:mb-4">
                 {stat.description}
+              </p>
+              <p className="text-secondary opacity-75 text-xs md:text-sm lg:text-base">
+                {stat.subtitle}
               </p>
             </div>
           ))}

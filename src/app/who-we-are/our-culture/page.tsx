@@ -10,8 +10,8 @@ export default function OurCulture() {
   return (
     <div className="min-h-screen bg-main">
       <main className="pt-20">
-        <section className="relative overflow-visible ml-4 md:ml-8 mb-16">
-          <div className="bg-primary flex flex-col md:flex-row min-h-[80vh]">
+        <section className="relative overflow-visible mb-16">
+          <div className="bg-primary flex flex-col md:flex-row min-h-[80vh] ml-0 md:ml-4 lg:ml-8">
             <div className="flex-1 px-4 md:px-8 py-8 md:py-16">
               <div className="flex flex-col justify-between h-full">
                 <div>
